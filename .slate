@@ -26,3 +26,7 @@ bind h:alt,shift focus left
 bind j:alt,shift focus down
 bind k:alt,shift focus up
 bind l:alt,shift focus right
+
+bind 1:alt throw 0 resize
+bind 2:alt throw 1 resize
+bind 3:alt throw 2 resize
