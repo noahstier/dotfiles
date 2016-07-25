@@ -18,3 +18,5 @@ export PS1="${GREEN}\w${PURPLE}\$(parse_git_branch) ${RESET}\$ "
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+test -f ~/.git-completion.bash && . $_
