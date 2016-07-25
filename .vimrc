@@ -10,6 +10,7 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 filetype plugin indent on
@@ -25,7 +26,7 @@ set hlsearch
 set scrolloff=5
 map <leader>o :noh<cr>
 nnoremap ; :
-autocmd BufWritePre * %s/\s\+$//e
+"autocmd BufWritePre * %s/\s\+$//e "automatically strip whitespace
 set clipboard=unnamed "vim shares system clipboard
 
 highlight ColorColumn ctermbg=8
