@@ -1,5 +1,4 @@
 alias ls="ls -alG"
 alias gs="git status"
-alias gc="git commit"
-alias vim="nvim"
-alias v="nvim"
+alias nv="nvim"
+alias v="vim"
