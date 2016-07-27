@@ -16,6 +16,7 @@ call vundle#end()
 filetype plugin indent on
 
 let mapleader = " "
+syntax on
 set showmode "show -- INSERT --
 set expandtab "tab key inserts spaces
 set tabstop=2 "tab width
@@ -28,6 +29,7 @@ map <leader>o :noh<cr>
 nnoremap ; :
 "autocmd BufWritePre * %s/\s\+$//e "automatically strip whitespace
 set clipboard=unnamed "vim shares system clipboard
+
 
 highlight ColorColumn ctermbg=8
 " set colorcolumn=81
@@ -48,6 +50,11 @@ map <C-L> <C-W><C-L>
 map <C-H> <C-W><C-H>
 
 if has("nvim")
+  "SPEEEEEEEEEEEEEED
+  set re=1
+  set updatetime=750
+
+  "mappings inside the terminal
   tmap <C-J> <Esc><C-J>
   tmap <C-K> <Esc><C-K>
   tmap <C-L> <Esc><C-L>
