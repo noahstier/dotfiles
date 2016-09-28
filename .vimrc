@@ -11,9 +11,10 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'elmcast/elm-vim'
+Plugin 'mxw/vim-jsx'
+Plugin 'slim-template/vim-slim.git'
 
 call vundle#end()
 filetype plugin indent on
@@ -32,6 +33,7 @@ set hlsearch
 set scrolloff=5
 set scroll=2
 map <leader>o :noh<cr>
+map <leader>j :%!python -m json.tool<cr>
 
 map <leader>q @q
 map <leader>w :w<cr>:noh<cr>
@@ -42,9 +44,10 @@ set clipboard=unnamed "vim shares system clipboard
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
 highlight Search cterm=NONE ctermfg=NONE ctermbg=59
-highlight ColorColumn ctermbg=8
-" set colorcolumn=81
+highlight ColorColumn ctermbg=0
+set colorcolumn=81
 
+let g:airline_powerline_fonts = 1
 let g:airline_theme = 'bubblegum'
 let g:airline#extensions#tabline#enabled = 1
 

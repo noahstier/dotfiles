@@ -1,6 +1,7 @@
 export ZSH=/Users/noahstier/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
+
 plugins=(sudo colored-man-pages)
 source $ZSH/oh-my-zsh.sh
 
@@ -10,16 +11,21 @@ pygmentize_less() {
 
 alias pless="pygmentize_less"
 alias pcat="pygmentize"
+alias img="imgcat"
 
 alias gs="git status -s"
 alias gd="git diff"
 alias gc="git commit -pv"
+alias gco="git checkout"
 alias ga="git add"
 alias gp="git push"
+alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
 
+alias tm="tmux"
 alias vim="nvim"
 alias ag="ag --pager=less"
 alias p="pydoc"
+alias wcl="wc -l"
 
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc && source ~/.zshrc"
