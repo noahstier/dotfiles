@@ -12,6 +12,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'haya14busa/incsearch.vim'
+Plugin 'jgdavey/tslime.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -54,6 +55,10 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'bubblegum'
 let g:airline#extensions#tabline#enabled = 1
 
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
+
+
 highlight Search cterm=bold ctermbg=59
 highlight ColorColumn ctermbg=0
 set colorcolumn=81
@@ -78,6 +83,10 @@ map <C-F> :Ag
 inoremap df <Esc>
 inoremap fd <Esc>
 inoremap <Esc> <NOP>
+
+vmap <C-c><C-c> <Plug>SendSelectionToTmux
+nmap <C-c><C-c> <Plug>NormalModeSendToTmux
+nmap <C-c>r <Plug>SetTmuxVars
 
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
