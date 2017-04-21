@@ -14,6 +14,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'benmills/vimux'
+Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 filetype plugin indent on
@@ -84,9 +85,6 @@ map <S-L> :bnext<CR>
 map <S-W> :bp<bar>sp<bar>bn<bar>bd<CR>
 map <S-Q> :close<CR>
 map <C-P> :FZF<CR>
-map <C-T> :Ag <C-R><C-W><CR>
-" dont delete the trailing space for :Ag
-map <C-F> :Ag 
 inoremap df <Esc>
 inoremap fd <Esc>
 inoremap <Esc> <NOP>
@@ -106,5 +104,9 @@ map ?  <Plug>(incsearch-backward)
 
 map <leader>p :VimuxPromptCommand<CR>
 map <leader>l :VimuxRunLastCommand<CR>
-map <leader>i :VimuxInspectRunner<CR>
-map <leader>z :VimuxZoomRunner<CR>
+
+nmap <C-c><C-c> <S-v> "vy :VimuxRunCommand(@v)<CR>
+nmap <C-c><C-d> vip "vy :VimuxRunCommand(@v)<CR>
+
+map <leader>n :NERDTreeToggle<CR>
+map <leader>f :NERDTreeFind<CR>
