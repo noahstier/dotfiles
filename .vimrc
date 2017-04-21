@@ -98,6 +98,9 @@ nnoremap <C-h> <C-w><C-h>
 " hackily handle tmux navigation
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 
+nnoremap <leader>vsp :vsp<CR>
+nnoremap <leader>sp :sp<CR>
+
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 
