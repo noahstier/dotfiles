@@ -81,7 +81,6 @@ nnoremap <leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 nnoremap ' `
 map <S-H> :bprev<CR>
 map <S-L> :bnext<CR>
-"map <S-W> :bdelete<CR>
 map <S-W> :bp<bar>sp<bar>bn<bar>bd<CR>
 map <S-Q> :close<CR>
 map <C-P> :FZF<CR>
@@ -102,11 +101,9 @@ nnoremap <leader>sp :sp<CR>
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 
-map <leader>p :VimuxPromptCommand<CR>
+nmap <leader>; :VimuxRunCommand(@")<CR>
+map <leader>: :VimuxPromptCommand<CR>
 map <leader>l :VimuxRunLastCommand<CR>
-
-nmap <C-c><C-c> <S-v> "vy :VimuxRunCommand(@v)<CR>
-nmap <C-c><C-d> vip "vy :VimuxRunCommand(@v)<CR>
 
 map <leader>n :NERDTreeToggle<CR>
 map <leader>f :NERDTreeFind<CR>
