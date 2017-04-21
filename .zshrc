@@ -2,6 +2,7 @@ export ZSH=/Users/noahstier/.oh-my-zsh
 ZSH_THEME="noah"
 COMPLETION_WAITING_DOTS="true"
 
+
 plugins=(sudo colored-man-pages)
 source $ZSH/oh-my-zsh.sh
 
@@ -33,3 +34,11 @@ export SAVEHIST=1000
 export HISTFILE=~/.history
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+bindkey -v
+bindkey -M viins 'fd' vi-cmd-mode
+bindkey -M viins 'df' vi-cmd-mode
+bindkey "^?" backward-delete-char
+bindkey '^R' history-incremental-pattern-search-backward
+export KEYTIMEOUT=1
+

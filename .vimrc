@@ -12,7 +12,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'haya14busa/incsearch.vim'
-Plugin 'jgdavey/tslime.vim'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'benmills/vimux'
 
 call vundle#end()
 filetype plugin indent on
@@ -58,6 +59,10 @@ let g:airline#extensions#tabline#enabled = 1
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
 
+let g:fzf_action = {
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
 
 highlight Search cterm=bold ctermbg=59
 highlight ColorColumn ctermbg=0
@@ -75,7 +80,9 @@ nnoremap <leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 nnoremap ' `
 map <S-H> :bprev<CR>
 map <S-L> :bnext<CR>
-map <S-W> :bdelete<CR>
+"map <S-W> :bdelete<CR>
+map <S-W> :bp<bar>sp<bar>bn<bar>bd<CR>
+map <S-Q> :close<CR>
 map <C-P> :FZF<CR>
 map <C-T> :Ag <C-R><C-W><CR>
 " dont delete the trailing space for :Ag
@@ -84,9 +91,17 @@ inoremap df <Esc>
 inoremap fd <Esc>
 inoremap <Esc> <NOP>
 
-vmap <C-c><C-c> <Plug>SendSelectionToTmux
-nmap <C-c><C-c> <Plug>NormalModeSendToTmux
-nmap <C-c>r <Plug>SetTmuxVars
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-h> <C-w><C-h>
+" hackily handle tmux navigation
+nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
+
+map <leader>p :VimuxPromptCommand<CR>
+map <leader>l :VimuxRunLastCommand<CR>
+map <leader>i :VimuxInspectRunner<CR>
+map <leader>z :VimuxZoomRunner<CR>
