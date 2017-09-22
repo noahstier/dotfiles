@@ -1,9 +1,8 @@
-export ZSH=/Users/noahstier/.oh-my-zsh
-ZSH_THEME="noah"
+export ZSH=/home/nstier/.oh-my-zsh
+ZSH_THEME="robbyrussell"
 COMPLETION_WAITING_DOTS="true"
 
-
-plugins=(sudo colored-man-pages)
+plugins=(colored-man-pages)
 source $ZSH/oh-my-zsh.sh
 
 alias g="git"
@@ -19,26 +18,35 @@ alias gsta="git stash apply"
 
 alias tm="tmux"
 alias tmat="tm a -t"
-alias ag="ag --pager=less"
 alias c="clear"
-alias vim="nvim"
+alias ipy="ipython --pylab auto"
+alias py="python"
+alias s=less
+alias v="vim"
+alias vi="vim"
 
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc && source ~/.zshrc"
 alias tmux.conf="vim ~/.tmux.conf && tmux source ~/.tmux.conf"
 
-export LSCOLORS="exfxcxdxbxegedabagacad"
+alias open="xdg-open"
 
-export HISTSIZE=1000
-export SAVEHIST=1000
+
+export HISTSIZE=10000
+export SAVEHIST=10000
 export HISTFILE=~/.history
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-bindkey -v
 bindkey -M viins 'fd' vi-cmd-mode
 bindkey -M viins 'df' vi-cmd-mode
-bindkey "^?" backward-delete-char
-bindkey '^R' history-incremental-pattern-search-backward
-export KEYTIMEOUT=1
 
+export PATH=/usr/bin:$PATH:$HOME/BuildAndTest:$HOME/Sandbox/bin:$HOME/DevelopmentTools/CMake
+export PATH=$PATH:/usr/local/wx-v3.0.3/bin:/usr/local/Toyon/bin:/usr/local/cuda/bin:/usr/local/ffmpeg-2.8.5/bin
+export CMAKE_PREFIX_PATH=$HOME/Source/install
+export LD_LIBRARY_PATH=/usr/local/gdal-2.1.3/lib:/usr/local/ffmpeg-2.8.5/lib:/usr/local/opencv-3.2.0/lib:/usr/local/cuda/lib64:/usr/local/wx-v3.0.3/lib:/usr/local/lib
+export LIBRARY_PATH=/usr/local/lib
+export EDITOR=vim
+export FZF_DEFAULT_COMMAND='ag --path-to-ignore ~/.ignore -g ""'
+
+xmodmap ~/.xmodmap
