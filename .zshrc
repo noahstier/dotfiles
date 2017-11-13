@@ -35,8 +35,6 @@ alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc && source ~/.zshrc"
 alias tmux.conf="vim ~/.tmux.conf && tmux source ~/.tmux.conf"
 
-alias open="xdg-open"
-
 export HISTSIZE=10000
 export SAVEHIST=10000
 export HISTFILE=~/.history
@@ -53,8 +51,6 @@ export PATH=/usr/bin:$PATH:$HOME/BuildAndTest:$HOME/Sandbox/bin:$HOME/Developmen
 export PATH=$PATH:/usr/local/wx-v3.0.3/bin:/usr/local/Toyon/bin:/usr/local/cuda/bin:/usr/local/ffmpeg-2.8.12/bin
 export PATH=$PATH:~/.cargo/bin
 export PATH=$HOME/miniconda3/bin:$PATH
-
-xmodmap ~/.xmodmap
 
 # incremental command search
 bindkey "^[OA" up-line-or-beginning-search
