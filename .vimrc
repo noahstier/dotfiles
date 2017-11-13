@@ -14,12 +14,14 @@ Plugin 'benmills/vimux'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ap/vim-buftabline'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'hdima/python-syntax'
 
 call vundle#end()
 filetype plugin indent on
 
 syntax on
-colorscheme default
 set re=1
 set rnu "relative line numbering
 set number "show absolute line number for current line only
@@ -42,7 +44,7 @@ set backup
 set backupdir=$HOME/.vim/files/backup/
 set backupext=-vimbackup
 set backupskip=
-set directory=$HOME/.vim/files/swap//
+set directory=$HOME/.vim/files/swap/
 set updatecount=100
 set undofile
 set undodir=$HOME/.vim/files/undo/
@@ -52,8 +54,19 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-highlight ColorColumn ctermbg=232
+autocmd BufEnter * sign define dummy
+autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
+
+colorscheme default
+
+highlight CursorLine ctermbg=238 cterm=None
+highlight ColorColumn ctermbg=238
+highlight YcmErrorSection ctermbg=88
 set colorcolumn=81
+
+let g:ycm_enable_diagnostic_signs = 0
+let g:ycm_enable_diagnostic_highlighting = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 let mapleader = " "
 map <leader>/ :noh<cr>
@@ -89,3 +102,5 @@ map <leader>l :VimuxRunLastCommand<CR>
 
 map <leader>n :NERDTreeToggle<CR>
 map <leader>f :NERDTreeFind<CR>
+
+map <C-n> *Ncgn<Esc>
