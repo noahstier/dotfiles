@@ -13,7 +13,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'benmills/vimux'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ap/vim-buftabline'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'hdima/python-syntax'
@@ -60,13 +60,13 @@ autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('
 colorscheme default
 
 highlight CursorLine ctermbg=238 cterm=None
-highlight ColorColumn ctermbg=238
+highlight ColorColumn ctermbg=0
 highlight YcmErrorSection ctermbg=88
-set colorcolumn=81
+set colorcolumn=89
 
-let g:ycm_enable_diagnostic_signs = 0
-let g:ycm_enable_diagnostic_highlighting = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_enable_diagnostic_signs = 0
+"let g:ycm_enable_diagnostic_highlighting = 1
+"let g:ycm_autoclose_preview_window_after_insertion = 1
 
 let mapleader = " "
 map <leader>/ :noh<cr>
@@ -81,9 +81,6 @@ map <S-L> :bnext<CR>
 map <S-W> :bp<bar>sp<bar>bn<bar>bd<CR>
 map <S-Q> :close<CR>
 map <C-P> :FZF<CR>
-inoremap df <Esc>
-inoremap fd <Esc>
-inoremap <Esc> <NOP>
 
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
@@ -103,4 +100,6 @@ map <leader>l :VimuxRunLastCommand<CR>
 map <leader>n :NERDTreeToggle<CR>
 map <leader>f :NERDTreeFind<CR>
 
-map <C-n> *Ncgn<Esc>
+map <C-n> *Ncgn
+
+
