@@ -35,16 +35,20 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 export HISTFILE=~/.history
 
+export EDITOR=vim
+
 bindkey -v
 
 source /home/nstier/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
-bindkey '^R' history-incremental-search-backward
+bindkey "^R" history-incremental-search-backward
+bindkey "^A" vi-beginning-of-line
+bindkey "^E" vi-end-of-line
 
-export PATH=usr/local/opencv-3.4.5/bin:/usr/local/wx-v3.1.2/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=usr/local/opencv-3.4.5/bin:/usr/local/wx-v3.1.2/bin:/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/opencv-3.4.5/lib:/usr/local/wx-v3.1.2/lib:$LD_LIBRARY_PATH
 
 . "/home/nstier/miniconda3/etc/profile.d/conda.sh"
-
