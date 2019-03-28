@@ -49,6 +49,6 @@ bindkey "^E" vi-end-of-line
 
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=usr/local/opencv-3.4.5/bin:/usr/local/wx-v3.1.2/bin:/usr/local/cuda/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/opencv-3.4.5/lib:/usr/local/wx-v3.1.2/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/opencv-3.4.5/lib:/usr/local/wx-v3.1.2/lib:$LD_LIBRARY_PATH
 
 . "/home/nstier/miniconda3/etc/profile.d/conda.sh"
