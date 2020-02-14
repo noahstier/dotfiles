@@ -17,6 +17,7 @@ Plugin 'ap/vim-buftabline'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'hdima/python-syntax'
+Plugin 'JuliaEditorSupport/julia-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -101,5 +102,3 @@ map <leader>n :NERDTreeToggle<CR>
 map <leader>f :NERDTreeFind<CR>
 
 map <C-n> *Ncgn
-
-
