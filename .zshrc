@@ -7,6 +7,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 alias n="ninja"
+alias open="xdg-open"
 
 alias act="conda activate"
 alias deact="conda deactivate"
@@ -23,11 +24,12 @@ alias gsta="git stash apply"
 alias tm="tmux"
 alias tmat="tm a -t"
 alias c="clear"
-alias ipy="ipython --pylab tk"
+alias ipy="ipython --matplotlib"
 alias py="python"
 alias s=less
 alias v="vim"
 alias feh="feh --keep-zoom-vp"
+alias ffprobe="ffprobe -hide_banner"
 
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc && source ~/.zshrc"
@@ -54,7 +56,7 @@ bindkey "^A" vi-beginning-of-line
 bindkey "^E" vi-end-of-line
 
 export PATH=$HOME/.cargo/bin:$PATH
-export PATH=/usr/local/julia-1.1.0/bin:/usr/local/cuda/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+export PATH=/usr/local/julia-1.1.0/bin:/usr/local/cuda/bin:$HOME/.local/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/lib:$LD_LIBRARY_PATH
 
 . "$HOME/miniconda3/etc/profile.d/conda.sh"

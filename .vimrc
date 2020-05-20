@@ -1,4 +1,6 @@
 set nocompatible
+filetype plugin indent on
+syntax on
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -20,9 +22,7 @@ Plugin 'hdima/python-syntax'
 Plugin 'JuliaEditorSupport/julia-vim'
 
 call vundle#end()
-filetype plugin indent on
 
-syntax on
 set re=1
 set rnu "relative line numbering
 set number "show absolute line number for current line only
@@ -60,7 +60,6 @@ autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('
 
 colorscheme default
 
-highlight CursorLine ctermbg=238 cterm=None
 highlight ColorColumn ctermbg=0
 highlight YcmErrorSection ctermbg=88
 set colorcolumn=89
